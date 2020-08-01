@@ -7,12 +7,20 @@
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
-        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">News</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Schedule</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">About us</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
+        <% if logged_in? %>
+          <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">メンバー情報</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">動画一覧</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">楽譜一覧</a></li>
+          <li class="nav-item"><%= link_to 'Logout', logout_path, method: :delete %></li>
+        <% else %>
+          <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">News</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Schedule</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">About us</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+          <li class="nav-item"><%= link_to 'Login', login_path, class: 'nav-link' %></li>
+        <% end %>
       </ul>
     </div>
   </nav>

@@ -1,5 +1,11 @@
 <div class="center jumbotron">
-  <div class="text-center">
-    <h1>Welcome to the Dream scouts</h1>
-  </div>
+  <% if logged_in? %>
+    <p>ログイン完了ユーザ: <%= current_user.name %></p>
+  <% else %>
+    <div class="center jumbotron">
+      <div class="text-center">
+        <h1>Welcome to Dream scouts</h1>
+      </div>
+    </div>
+  <% end %>
 </div>

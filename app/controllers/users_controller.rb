@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :require_user_logged_in, only: [:index, :show]
+    
   def index
     #postの内容を最新順で表示
     @posts = Post.order(id: :desc).page(params[:page]).per(25)
@@ -8,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = user.new
+    @user = User.new
   end
 
   def create
