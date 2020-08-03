@@ -6,4 +6,24 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
                     
     has_secure_password
+    
+    has_many :posts
+    
+    has_many :reads
+    has_many :readings, through: :reads, source: :post
+    
+    def read(other_user)
+        unless self == other_user
+          self.reads.find_or_create_by(post_id: other_user.id)
+        end
+    end
+    
+    def unread(other_user)
+        read = self.reads.find_by(post_id: other_user.id)
+        read.destroy if read
+    end
+    
+    def reading?(other_user)
+        self.readings.include?(other_user)
+    end
 end

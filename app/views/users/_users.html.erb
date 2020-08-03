@@ -5,9 +5,11 @@
         <img class="mr-2 rounded" src="<%= gravatar_url(user, { size: 50 }) %>" alt="">
         <div class="media-body">
           <div>
-            <%= user.name %>
-            <%= post.tittle %>
-            <%= post.content %>
+            <h6><%= user.name %></h6>
+            <h6><%= user.instrument %></h6>
+            <h6><%= user.birthday %></h6>
+            <h6><%= user.carrer %></h6>
+            <h6><%= user.message %></h6>
           </div>
         </div>
       </li>

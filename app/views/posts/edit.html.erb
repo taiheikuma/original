@@ -1,0 +1,23 @@
+<div class="text-center">
+  <h1>投稿内容の編集</h1>
+</div>
+  
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+    <%= form_with(model: @post, local: true) do |f| %>
+      <div class="form-group">
+        <%= f.label :tittle, 'タイトル' %>
+        <%= f.text_field :tittle, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :content, '内容' %>
+        <%= f.text_area :content, class: 'form-control' %>
+      </div>
+      
+      <%= f.submit 'post', class: 'btn btn-primary btn-block' %>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to '一覧に戻る', user_path %>
