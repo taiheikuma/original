@@ -1,4 +1,4 @@
-<header class="mb-4">
+<header class="mb-4 sticky-top">
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <a class="navbar-brand" href="/">Dream scouts</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
@@ -10,10 +10,17 @@
         <% if logged_in? %>
           <li class="nav-item"><%= link_to 'HOME', root_url, class: "nav-link" %></li>
           <li class="nav-item"><%= link_to '連絡板', user_path(current_user), class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to 'メンバー情報', users_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to 'パート情報', parts_path, class: "nav-link" %></li>
           <li class="nav-item"><a href="#" class="nav-link">動画一覧</a></li>
           <li class="nav-item"><a href="#" class="nav-link">楽譜一覧</a></li>
-          <li class="nav-item"><%= link_to 'Logout', logout_path, method: :delete, class: 'nav-link' %></li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li class="dropdown-item"><%= link_to 'My profile', user_path(current_user) %></li>
+              <li class="dropdown-divider"></li>
+              <li class="dropdown-item"><%= link_to 'Logout', logout_path, method: :delete %></li>
+            </ul>
+          </li>
         <% else %>
           <li class="nav-item"><%= link_to 'HOME', root_url, class: "nav-link" %></li>
           <li class="nav-item"><a href="#" class="nav-link">News</a></li>

@@ -1,22 +1,18 @@
-<div class="center jumbotron">
-  <% if logged_in? %>
-    <div class="center jumbotron">
-      <div class="text-center">
-        <h1>Dream scouts Member page</h1>
-      </div>
-    </div>
-    <div>
-      <%= link_to '連絡板', user_path(current_user) %> 
-      <%= link_to 'メンバー情報', users_path %>
-      <%= link_to '動画一覧' %>
-      <%= link_to '楽譜一覧' %>
-    </div>
+<% if logged_in? %>
+  <div class="text-center">
+    <h1>Dream scouts Member page</h1>
+    <img src="/assets/top.jpg" alt="" class="img-fluid">
   </div>
-  <% else %>
-    <div class="center jumbotron">
-      <div class="text-center">
-        <h1>Welcome to Dream scouts</h1>
-      </div>
-    </div>
-  <% end %>
+  <div>
+    <%= link_to '連絡板', user_path(current_user) %> 
+    <%= link_to 'パート情報', parts_path %>
+    <%= link_to '動画一覧' %>
+    <%= link_to '楽譜一覧' %>
+  </div>
 </div>
+<% else %>
+  <div class="text-center">
+    <h1>Welcome to Dream scouts</h1>
+    <img src="/assets/top.jpg" alt="" class="img-fluid">
+  </div>
+<% end %>

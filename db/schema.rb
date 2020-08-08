@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_01_234209) do
+ActiveRecord::Schema.define(version: 2020_08_06_230315) do
+
+  create_table "parts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "tittle"
@@ -40,9 +46,13 @@ ActiveRecord::Schema.define(version: 2020_08_01_234209) do
     t.date "birthday"
     t.string "carrer"
     t.string "message"
+    t.bigint "part_id"
+    t.string "image"
+    t.index ["part_id"], name: "index_users_on_part_id"
   end
 
   add_foreign_key "posts", "users"
   add_foreign_key "reads", "posts"
   add_foreign_key "reads", "users"
+  add_foreign_key "users", "parts"
 end

@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 
     if @user.update(user_params)
       flash[:success] = '正常に更新されました'
-      redirect_to users_path
+      redirect_to part_path
     else
       flash.now[:danger] = '更新されませんでした'
       render :edit
@@ -50,7 +50,7 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:user).permit(:name, :email, :password, :instrument, :birthday, :carrer, :message)
+    params.require(:user).permit(:name, :email, :password, :instrument, :birthday, :carrer, :message, :part_id, :image)
   end
   
 end

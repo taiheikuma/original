@@ -1,15 +1,17 @@
 class ReadsController < ApplicationController
+  before_action :require_user_logged_in
+  
   def create
-    user = User.find(params[:post_id])
+    post = Post.find(params[:post_id])
     current_user.read(post)
     flash[:success] = '読みました。'
-    redirect_to user
+    redirect_to user_path(current_user)
   end
 
   def destroy
-    user = User.find(params[:post_id])
-    current_user.unread(user)
+    post = Post.find(params[:post_id])
+    current_user.unread(post)
     flash[:success] = 'まだ読んでいません。'
-    redirect_to user
+    redirect_to user_path(current_user)
   end
 end

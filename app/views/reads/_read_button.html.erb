@@ -1,12 +1,12 @@
-<% unless current_user == user %>
+<% unless current_user == post.user %>
   <% if current_user.reading?(post) %>
-    <%= form_with(model: current_user.reads.find_by(post_id: user.id), local: true, method: :delete) do |f| %>
-      <%= hidden_field_tag :post_id, user.id %>
+    <%= form_with(model: current_user.reads.find_by(post_id: post.id), local: true, method: :delete) do |f| %>
+      <%= hidden_field_tag :post_id, post.id %>
       <%= f.submit '未読', class: 'btn btn-danger btn-block' %>
     <% end %>
   <% else %>
     <%= form_with(model: current_user.reads.build, local: true) do |f| %>
-      <%= hidden_field_tag :post_id, user.id %>
+      <%= hidden_field_tag :post_id, post.id %>
       <%= f.submit '既読', class: 'btn btn-primary btn-block' %>
     <% end %>
   <% end %>
