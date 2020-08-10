@@ -1,5 +1,19 @@
-<%= render 'parts', parts: @parts %>
+<div class="text-center m-5">
+  <h1>パート一覧</h1>
+</div>
+  <div>
+    <div class="container">
+      <div class="row center">
+        <% @parts.each do |part| %>
+          <div class="col-xl-4 text-center">
+            <h5><%= link_to part.name, part_path(part) %></h5>
+            <p><%= link_to image_tag(part.image.thumbpart.url), part_path(part) %></p>
+          </div>
+        <% end %>  
+      </div>
+    </div>
+  </div>
+  <%= paginate @parts %>
+
 
 <%= link_to 'パートを追加', new_part_path %>
-
-<img src="images/main_visual.jpg" alt="" class="img-fluid">

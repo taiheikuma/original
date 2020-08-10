@@ -10,6 +10,6 @@ Rails.application.routes.draw do
  
  resources :parts
  
- resources :posts, only: [:create, :edit, :update, :destroy]
+ resources :posts, only: [:index, :create, :edit, :update, :destroy]
  resources :reads, only: [:create, :destroy]
 end

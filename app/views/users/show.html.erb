@@ -1,16 +1,23 @@
-<div class="row">
-  <div class="col-sm-7">
-    <%= render 'posts/posts', posts: @posts %>
-  </div>
-  <aside class="col-sm-5">
-    <%= form_with(model: @post, local: true) do |f| %>
-      <div class="form-group">
-        <%= f.label :tittle, "タイトル" %>
-        <%= f.text_area :tittle, class: 'form-control', rows: 1 %>
-        <%= f.label :content, "内容" %>
-        <%= f.text_area :content, class: 'form-control', rows: 5 %>
-      </div>
-      <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
-    <% end %>
-  </aside>
+<div class="text-center m-5">
+  <h1>プロフィール</h1>
 </div>
+
+<ul class="list-unstyled">
+    <li class="media">
+      <div>
+        <%= image_tag current_user.image.thumb.url if current_user.image? %>
+      </div>
+      <div class="media-body m-2">
+        <div>
+          <h6>名前：<%= current_user.name %></h6>
+          <h6>メールアドレス：<%= current_user.email %></h6>
+          <h6>楽器：<%= current_user.part.name %></h6>
+          <h6>生年月日：<%= current_user.birthday %></h6>
+          <h6>経歴：<%= current_user.carrer %></h6>
+          <h6>メッセージ：<%= current_user.message %></h6>
+        </div>
+      </div>
+    </li>
+</ul>
+
+<%= link_to '個人情報を編集する', edit_user_path(current_user) %>

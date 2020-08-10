@@ -1,21 +1,25 @@
 <% if users.any? %>
   <ul class="list-unstyled">
-    <% users.each do |user| %>
-      <li class="media">
-        <div>
-          <%= image_tag user.image.thumb.url if user.image? %>
-        </div>
-        <div class="media-body">
-          <div>
-            <h6>名前：<%= user.name %></h6>
-            <h6>楽器：<%= user.part.name %></h6>
-            <h6>生年月日：<%= user.birthday %></h6>
-            <h6>経歴：<%= user.carrer %></h6>
-            <h6>メッセージ：<%= user.message %></h6>
-          </div>
-        </div>
-      </li>
-    <% end %>
+    <div class="container">
+      <div class="row">
+        <% users.each do |user| %>
+          <li class="media m-2 p-2 border col-lx-3">
+            <div class="m-1">
+              <%= image_tag user.image.thumb.url if user.image? %>
+            </div>
+            <div class="media-body">
+              <div>
+                <h6>名前：<%= user.name %></h6>
+                <h6>楽器：<%= user.part.name %></h6>
+                <h6>生年月日：<%= user.birthday %></h6>
+                <h6>経歴：<%= user.carrer %></h6>
+                <h6>メッセージ：<%= user.message %></h6>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </div>
+    </div>
   </ul>
   <%= paginate users %>
 <% end %>

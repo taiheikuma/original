@@ -1,12 +1,12 @@
 <div class="text-center">
-  <h1>パート登録</h1>
+  <h1>パート情報編集</h1>
 </div>
 
 <div class="row">
   <div class="col-sm-6 offset-sm-3">
     <%= form_with(model: @part, local: true) do |f| %>
       <div class="form-group">
-        <%= f.label :name, 'Name' %>
+        <%= f.label :name, 'パート名' %>
         <%= f.text_field :name, class: 'form-control' %>
       </div>
       <div>
@@ -19,9 +19,10 @@
             <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
           </button>
       </div>
-      <%= f.submit '登録', class: 'btn btn-primary btn-block' %>
+      <%= f.submit '登録', class: 'btn btn-primary btn-sm' %>
+      <%= link_to "削除", @part, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
     <% end %>
   </div>
 </div>
 
-<%= link_to '一覧に戻る', parts_path %>
+<%= link_to '戻る', part_path %>

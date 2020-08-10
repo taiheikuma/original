@@ -1,6 +1,6 @@
 class PartsController < ApplicationController
     def index
-        @parts = Part.order(id: :desc).page(params[:page]).per(25)
+        @parts = Part.order(:id).page(params[:page]).per(25)
     end
     
     def show
@@ -23,9 +23,31 @@ class PartsController < ApplicationController
         end
     end
     
+    def edit
+        @part = Part.find(params[:id])
+    end
+
+    def update
+        @part = Part.find(params[:id])
+        if @part.update(part_params)
+          flash[:success] = '正常に更新されました'
+          redirect_to parts_path
+        else
+          flash.now[:danger] = '更新されませんでした'
+          render :edit
+        end
+    end
+    
+    def destroy
+        @part = Part.find(params[:id])
+        @part.destroy
+        flash[:success] = '連絡を削除しました。'
+        redirect_to parts_path
+    end
+    
     private
   
     def part_params
-        params.require(:part).permit(:name)
+        params.require(:part).permit(:name, :image)
     end
 end

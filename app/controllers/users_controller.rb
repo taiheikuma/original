@@ -1,15 +1,7 @@
 class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:index, :show]
     
-  def index
-    @users = User.order(id: :desc).page(params[:page]).per(25)
-  end
-    
   def show
-    @posts = Post.order(id: :desc).page(params[:page]).per(25)
-    if logged_in?
-      @post = current_user.posts.build
-    end
   end
 
   def new
@@ -37,7 +29,7 @@ class UsersController < ApplicationController
 
     if @user.update(user_params)
       flash[:success] = '正常に更新されました'
-      redirect_to part_path
+      redirect_to user_path(current_user)
     else
       flash.now[:danger] = '更新されませんでした'
       render :edit

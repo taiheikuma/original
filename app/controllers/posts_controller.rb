@@ -2,15 +2,22 @@ class PostsController < ApplicationController
   before_action :require_user_logged_in
   before_action :correct_user, only: [:destroy]
   
+  def index
+    @posts = Post.order(id: :desc).page(params[:page]).per(25)
+    if logged_in?
+      @post = current_user.posts.build
+    end
+  end
+  
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = '連絡を投稿しました。'
-      redirect_to user_path(current_user)
+      redirect_to posts_path
     else
       @posts = current_user.posts.order(id: :desc).page(params[:page])
       flash.now[:danger] = '連絡の投稿に失敗しました。'
-      render 'toppages/index'
+      redirect_to posts_path 
     end
   end
 
@@ -23,7 +30,7 @@ class PostsController < ApplicationController
     
     if @post.update(post_params)
       flash[:success] = '正常に更新されました'
-      redirect_to user_path
+      redirect_to posts_path
     else
       flash.now[:danger] = '更新されませんでした'
       render :edit
@@ -32,7 +39,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    flash[:success] = '連絡を削除しました。'
+    flash[:success] = '投稿を削除しました。'
     redirect_back(fallback_location: root_path)
   end
   
