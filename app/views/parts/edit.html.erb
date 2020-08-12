@@ -1,7 +1,6 @@
 <div class="text-center">
   <h1>パート情報編集</h1>
 </div>
-
 <div class="row">
   <div class="col-sm-6 offset-sm-3">
     <%= form_with(model: @part, local: true) do |f| %>
@@ -24,5 +23,6 @@
     <% end %>
   </div>
 </div>
-
-<%= link_to '戻る', part_path %>
+<div class="text-right">
+  <%= link_to '戻る', part_path %>
+</div>

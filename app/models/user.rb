@@ -10,7 +10,7 @@ class User < ApplicationRecord
     belongs_to :part, optional: true
     
     has_many :posts
-    
+    has_many :articles
     has_many :reads
     has_many :readings, through: :reads, source: :post
     

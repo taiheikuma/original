@@ -6,7 +6,7 @@
       <div class="row center">
         <% @parts.each do |part| %>
           <div class="col-xl-4 text-center">
-            <h5><%= link_to part.name, part_path(part) %></h5>
+            <h5><%= part.name %></h5>
             <p><%= link_to image_tag(part.image.thumbpart.url), part_path(part) %></p>
           </div>
         <% end %>  
@@ -15,5 +15,6 @@
   </div>
   <%= paginate @parts %>
 
-
-<%= link_to 'パートを追加', new_part_path %>
+<div class="text-right">
+  <%= link_to 'パートを追加', new_part_path %>
+</div>

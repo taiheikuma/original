@@ -7,7 +7,7 @@ Rails.application.routes.draw do
  
  get 'signup', to: 'users#new'
  resources :users
- 
+ resources :articles
  resources :parts
  
  resources :posts, only: [:index, :create, :edit, :update, :destroy]

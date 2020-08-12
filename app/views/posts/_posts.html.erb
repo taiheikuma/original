@@ -2,14 +2,14 @@
   <% posts.each do |post| %>
     <li class="media mb-3 p-1 border">
       <div class='mr-3'>
-        <%= image_tag post.user.image.thumb.url if post.user.image? %>
+        <%= image_tag post.user.image.thumbboard.url if post.user.image? %>
       </div>
       <div class="media-body">
-        <div>
-          <%= post.user.name %> <span class="text-muted"><%= post.created_at %></span>
+        <div class="font-weight-bold mb-2">
+          <%= post.user.name %>
         </div>
         <div>
-          <p class="mb-1"><%= post.tittle %></p>
+          <h5 class="mb-1"><%= post.tittle %></h5>
           <p class="mb-1"><%= simple_format(post.content) %></p>
         </div>
         <div>

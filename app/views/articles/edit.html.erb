@@ -1,0 +1,32 @@
+<div class="text-center">
+  <h1>記事の編集</h1>
+</div>
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+    <%= form_with(model: @article, local: true) do |f| %>
+      <div class="form-group">
+        <%= f.label :title, 'タイトル' %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :content, '記事の内容' %>
+        <%= f.text_area :content, class: 'form-control' %>
+      </div>
+      <div>
+        <% if @article.image? %>
+          <%= image_tag @article.image.url %>
+        <% else %>
+          <%= image_tag "/assets/default.jpg", :size => '100x100' %>
+        <% end %>
+          <button type="button" class="btn btn-outline-secondary rounded-pill">
+            <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+          </button>
+      </div>
+      <%= f.submit '登録', class: 'btn btn-primary btn-block' %>
+      <%= link_to "削除", @article, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+    <% end %>
+  </div>
+</div>
+<div class="text-left">
+    <%= link_to "戻る", article_path %>
+</div>

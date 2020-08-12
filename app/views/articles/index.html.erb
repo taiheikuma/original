@@ -1,0 +1,21 @@
+<div class="text-center m-5">
+  <h1>ニュース一覧</h1>
+</div>
+<div>
+  <div class="container">
+    <div class="row center">
+      <% @articles.each do |article| %>
+        <div class="col-xl-4 text-center">
+          <h5><%= article.title %></h5>
+          <p><%= link_to image_tag(article.image.thumbpart.url), article_path(article) %></p>
+        </div>
+      <% end %>  
+    </div>
+  </div>
+</div>
+<%= paginate @articles %>
+<% if logged_in? %>
+  <div class="text-right">
+    <%= link_to '記事を追加', new_article_path %>
+  </div>
+<% end %>
