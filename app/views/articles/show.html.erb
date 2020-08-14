@@ -14,11 +14,15 @@
     </div>
   </div>
 </ul>
-<div class="text-left">
-  <%= link_to "戻る", articles_path %>
-</div>
-<% if logged_in? %>
-  <div class="text-right">
-    <%= link_to '記事を編集する', edit_article_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <%= link_to "戻る", articles_path %>
+    </div>
+    <% if logged_in? %>
+      <div class="offset-md-7 col-md-3">
+        <%= link_to '記事を編集する', edit_article_path %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>

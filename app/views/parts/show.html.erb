@@ -1,11 +1,34 @@
 <div class="text-center m-5">
   <h1>パートメンバー</h1>
 </div>
-
-<%= render 'users/users', users: @users %>
-<div class="text-left">
-    <%= link_to 'パート情報を編集する', edit_part_path %>
-</div>
-<div class="text-right">
-    <%= link_to '戻る', parts_path %>
+<% if @users.any? %>
+  <ul class="list-unstyled">
+    <div class="container">
+      <div class="row">
+        <% @users.each do |user| %>
+          <li class="media m-2 p-2 border col-lx-3">
+            <div class="m-1">
+              <%= image_tag user.image.thumb.url if user.image? %>
+            </div>
+            <div class="media-body">
+              <div>
+                <h6>名前：<%= user.name %></h6>
+                <h6>楽器：<%= user.part.name %></h6>
+                <h6>生年月日：<%= user.birthday %></h6>
+                <h6>経歴：<%= user.carrer %></h6>
+                <h6>メッセージ：<%= user.message %></h6>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </div>
+    </div>
+  </ul>
+  <%= paginate @users %>
+<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"><%= link_to '戻る', parts_path %></div>
+    <div class="offset-md-7 col-md-3"><%= link_to 'パートを編集する', edit_part_path %></div>
+  </div>
 </div>

@@ -1,6 +1,8 @@
 class PartsController < ApplicationController
+    before_action :require_user_logged_in
+    
     def index
-        @parts = Part.order(:id).page(params[:page]).per(25)
+        @parts = Part.order(:id)
     end
     
     def show

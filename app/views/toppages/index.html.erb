@@ -10,7 +10,7 @@
       <div class="container">
         <div class="row center">
           <% @articles.each do |article| %>
-            <div class="col-xl-4 text-center">
+            <div class="col-xl-4 text-center cover-img">
               <h5><%= article.title %></h5>
               <p><%= link_to image_tag(article.image.thumbpart.url), article_path(article) %></p>
             </div>
@@ -25,11 +25,27 @@
     <h3 class="text-center">スケジュール</h3>
   </div>
   <hr>
-</div>
+  <div class="footer-icon text-center">
+      <i class="fab fa-twitter fa-2x m-2"></i>
+      <i class="fab fa-instagram fa-2x m-2"></i>
+      <i class="fab fa-facebook-f fa-2x m-2"></i>
+      <i class="fab fa-youtube fa-2x m-2"></i>
+  </div>
+  <div class="text-center">
+    <small>&copy; 2020 DreamScouts.</small>
+  </div>
 <% else %>
   <div class="text-center">
     <img src="/assets/header.png" alt="" class="img-fluid">
     <img src="/assets/top.jpg" alt="" class="img-fluid">
+  </div>
+  <hr>
+  <div>
+    <div class="text-center">
+      <h3>About us</h3>
+      <p>DreamScoutsは一般のマーチングバンドのチームです。</p>
+    </div>
+    <p class="text-right">詳細はこちら</p>
   </div>
   <hr>
   <div>
@@ -53,4 +69,26 @@
     <h3 class="text-center">スケジュール</h3>
   </div>
   <hr>
+  <div class="container">
+    <div class="row">
+      <a href="#" class="col-md-4 btn btn-light btn-block border-white">
+        <i class="fas fa-question fa-2x m-2" style="vertical-align:middle;"></i>問い合わせ、依頼演奏等はこちら
+      </a>
+      <a href="#" class="col-md-4 btn btn-light border-white">
+        <i class="far fa-envelope fa-2x m-2" style="vertical-align:middle;"></i>見学申請はこちら
+      </a>
+      <a href="login" class="col-md-4 btn btn-light border-white">
+        <i class="fas fa-sign-in-alt fa-2x m-2" style="vertical-align:middle;"></i>メンバーログイン
+      </a>
+    </div>
+  </div>
+  <div class="text-center">
+      <i class="fab fa-twitter fa-2x m-2"></i>
+      <i class="fab fa-instagram fa-2x m-2"></i>
+      <i class="fab fa-facebook-f fa-2x m-2"></i>
+      <i class="fab fa-youtube fa-2x m-2"></i>
+  </div>
+  <div class="text-center">
+    <small>&copy; 2020 DreamScouts.</small>
+  </div>
 <% end %>

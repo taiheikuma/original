@@ -1,20 +1,18 @@
 <div class="text-center m-5">
   <h1>パート一覧</h1>
 </div>
-  <div>
-    <div class="container">
-      <div class="row center">
-        <% @parts.each do |part| %>
-          <div class="col-xl-4 text-center">
-            <h5><%= part.name %></h5>
-            <p><%= link_to image_tag(part.image.thumbpart.url), part_path(part) %></p>
-          </div>
-        <% end %>  
-      </div>
+<div>
+  <div class="container">
+    <div class="row center">
+      <% @parts.each do |part| %>
+        <div class="col-xl-4 text-center">
+          <h5><%= part.name %></h5>
+          <div class="mb-5"><%= link_to image_tag(part.image.thumbpart.url), part_path(part) %></div>
+        </div>
+      <% end %>  
     </div>
   </div>
-  <%= paginate @parts %>
-
+</div>
 <div class="text-right">
   <%= link_to 'パートを追加', new_part_path %>
 </div>

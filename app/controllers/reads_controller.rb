@@ -5,13 +5,13 @@ class ReadsController < ApplicationController
     post = Post.find(params[:post_id])
     current_user.read(post)
     flash[:success] = '読みました。'
-    redirect_to user_path(current_user)
+    redirect_to posts_path
   end
 
   def destroy
     post = Post.find(params[:post_id])
     current_user.unread(post)
     flash[:success] = 'まだ読んでいません。'
-    redirect_to user_path(current_user)
+    redirect_to posts_path
   end
 end

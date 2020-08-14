@@ -10,6 +10,11 @@ Rails.application.routes.draw do
  resources :articles
  resources :parts
  
- resources :posts, only: [:index, :create, :edit, :update, :destroy]
+ resources :posts, only: [:index, :show, :create, :edit, :update, :destroy] do
+  member do
+   get :reads
+  end
+ end
+ 
  resources :reads, only: [:create, :destroy]
 end

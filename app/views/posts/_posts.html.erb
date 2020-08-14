@@ -2,7 +2,7 @@
   <% posts.each do |post| %>
     <li class="media mb-3 p-1 border">
       <div class='mr-3'>
-        <%= image_tag post.user.image.thumbboard.url if post.user.image? %>
+        <%= image_tag post.user.image.thumb.url if post.user.image? %>
       </div>
       <div class="media-body">
         <div class="font-weight-bold mb-2">
@@ -13,7 +13,6 @@
           <p class="mb-1"><%= simple_format(post.content) %></p>
         </div>
         <div>
-          <% render "reads/read_button", post: @post %>
           <% unless current_user == post.user %>
             <% if current_user.reading?(post) %>
               <%= form_with(model: current_user.reads.find_by(post_id: post.id), local: true, method: :delete) do |f| %>

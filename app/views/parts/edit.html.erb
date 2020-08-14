@@ -8,21 +8,23 @@
         <%= f.label :name, 'パート名' %>
         <%= f.text_field :name, class: 'form-control' %>
       </div>
-      <div>
+      <div class="text-center">
         <% if @part.image? %>
-          <%= image_tag @part.image.url %>
+          <%= image_tag @part.image.thumbpart.url %>
         <% else %>
           <%= image_tag "/assets/default.jpg", :size => '100x100' %>
         <% end %>
-          <button type="button" class="btn btn-outline-secondary rounded-pill">
+          <button type="button" class="btn btn-outline-secondary rounded-pill m-2">
             <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
           </button>
       </div>
-      <%= f.submit '登録', class: 'btn btn-primary btn-sm' %>
-      <%= link_to "削除", @part, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+      <div class="text-center">
+        <%= f.submit '登録', class: 'btn btn-primary btn-sm m-2' %>
+        <%= link_to "削除", @part, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm m-2' %>
+      </div>
     <% end %>
   </div>
 </div>
-<div class="text-right">
+<div class="text-left">
   <%= link_to '戻る', part_path %>
 </div>

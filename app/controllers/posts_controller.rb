@@ -7,16 +7,17 @@ class PostsController < ApplicationController
     if logged_in?
       @post = current_user.posts.build
     end
+    
   end
   
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      flash[:success] = '連絡を投稿しました。'
+      flash[:success] = '投稿しました。'
       redirect_to posts_path
     else
       @posts = current_user.posts.order(id: :desc).page(params[:page])
-      flash.now[:danger] = '連絡の投稿に失敗しました。'
+      flash.now[:danger] = '投稿に失敗しました。'
       redirect_to posts_path 
     end
   end
@@ -29,7 +30,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     
     if @post.update(post_params)
-      flash[:success] = '正常に更新されました'
+      flash[:success] = '更新されました'
       redirect_to posts_path
     else
       flash.now[:danger] = '更新されませんでした'
@@ -39,7 +40,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    flash[:success] = '投稿を削除しました。'
+    flash[:success] = '削除しました。'
     redirect_back(fallback_location: root_path)
   end
   

@@ -7,7 +7,7 @@
       <% @articles.each do |article| %>
         <div class="col-xl-4 text-center">
           <h5><%= article.title %></h5>
-          <p><%= link_to image_tag(article.image.thumbpart.url), article_path(article) %></p>
+          <div class="mb-5"><%= link_to image_tag(article.image.thumbpart.url), article_path(article) %></div>
         </div>
       <% end %>  
     </div>

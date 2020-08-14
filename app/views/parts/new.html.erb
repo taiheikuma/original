@@ -1,27 +1,29 @@
 <div class="text-center">
   <h1>パート登録</h1>
 </div>
-
 <div class="row">
   <div class="col-sm-6 offset-sm-3">
     <%= form_with(model: @part, local: true) do |f| %>
       <div class="form-group">
-        <%= f.label :name, 'Name' %>
+        <%= f.label :name, 'パート名' %>
         <%= f.text_field :name, class: 'form-control' %>
       </div>
-      <div>
+      <div class="text-center">
         <% if @part.image? %>
           <%= image_tag @part.image.url %>
         <% else %>
           <%= image_tag "/assets/default.jpg", :size => '100x100' %>
         <% end %>
-          <button type="button" class="btn btn-outline-secondary rounded-pill">
+          <button type="button" class="btn btn-outline-secondary rounded-pill m-2">
             <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
           </button>
       </div>
-      <%= f.submit '登録', class: 'btn btn-primary btn-block' %>
+      <div class="text-center">
+        <%= f.submit '追加', class: 'btn btn-primary btn-block m-2' %>
+      </div>
     <% end %>
   </div>
 </div>
-
-<%= link_to '一覧に戻る', parts_path %>
+<div>
+  <%= link_to '戻る', parts_path %>
+</div>
