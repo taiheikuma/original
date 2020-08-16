@@ -2,6 +2,9 @@ class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:index, :show]
     
   def show
+    unless current_user.part.present?
+      redirect_to edit_user_path(current_user)
+    end
   end
 
   def new
