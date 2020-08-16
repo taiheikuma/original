@@ -1,6 +1,8 @@
 <% if logged_in? %>
   <div class="text-center">
-    <img src="/assets/header.png" alt="" class="img-fluid">
+    <h1>DreamScouts</h1>
+  </div>
+  <div class="text-center">
     <img src="/assets/top.jpg" alt="" class="img-fluid">
   </div>
   <hr>
@@ -22,7 +24,7 @@
   </div>
   <hr>
   <div>
-    <h3 class="text-center m-3">スケジュール</h3>
+    <h3 id="schdules" class="text-center m-3">スケジュール</h3>
   </div>
   <ul class="nav nav-tabs nav-justified">
     <li class="nav-item"><a href="#mon-4" class="nav-link active" data-toggle="tab">4月<a/></li>
@@ -210,8 +212,10 @@
     <small>&copy; 2020 DreamScouts.</small>
   </div>
 <% else %>
+  <div class="text-center m-3">
+    <h1>DreamScouts</h1>
+  </div>
   <div class="text-center">
-    <img src="/assets/header.png" alt="" class="img-fluid">
     <img src="/assets/top.jpg" alt="" class="img-fluid">
   </div>
   <hr>
@@ -220,7 +224,7 @@
       <h3 class="m-3">About us</h3>
       <p>DreamScoutsは一般のマーチングバンドのチームです。</p>
     </div>
-    <p class="text-right">詳細はこちら</p>
+    <p class="text-right"><%= link_to "詳細はこちら", about_path %></p>
   </div>
   <hr>
   <div>

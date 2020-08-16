@@ -15,7 +15,7 @@ class SchdulesController < ApplicationController
     @schdule = current_user.schdules.build(schdule_params)
     if @schdule.save
       flash[:success] = '予定を投稿しました。'
-      redirect_to root_url
+      redirect_to root_url(anchor: 'schdules')
     else
       flash.now[:danger] = '予定の投稿に失敗しました。'
       render :new
@@ -30,7 +30,7 @@ class SchdulesController < ApplicationController
     @schdule = Schdule.find(params[:id])
     if @schdule.update(schdule_params)
       flash[:success] = '更新されました'
-      redirect_to root_url
+      redirect_to root_url(anchor: 'schdules')
     else
       flash.now[:danger] = '更新されませんでした'
       render :edit
@@ -41,7 +41,7 @@ class SchdulesController < ApplicationController
     @schdule = Schdule.find(params[:id])
     @schdule.destroy
     flash[:success] = '予定を削除しました。'
-    redirect_to root_url
+    redirect_to root_url(anchor: 'schdules')
   end
 
   private
