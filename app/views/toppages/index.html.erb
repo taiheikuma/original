@@ -5,7 +5,7 @@
   </div>
   <hr>
   <div>
-    <h3 class="text-center">New Topics</h3>
+    <h3 class="text-center m-3">New Topics</h3>
     <div>
       <div class="container">
         <div class="row center">
@@ -22,7 +22,182 @@
   </div>
   <hr>
   <div>
-    <h3 class="text-center">スケジュール</h3>
+    <h3 class="text-center m-3">スケジュール</h3>
+  </div>
+  <ul class="nav nav-tabs nav-justified">
+    <li class="nav-item"><a href="#mon-4" class="nav-link active" data-toggle="tab">4月<a/></li>
+    <li class="nav-item"><a href="#mon-5" class="nav-link" data-toggle="tab">5月</a></li>
+    <li class="nav-item"><a href="#mon-6" class="nav-link" data-toggle="tab">6月</a></li>
+    <li class="nav-item"><a href="#mon-7" class="nav-link" data-toggle="tab">7月</a></li>
+    <li class="nav-item"><a href="#mon-8" class="nav-link" data-toggle="tab">8月</a></li>
+    <li class="nav-item"><a href="#mon-9" class="nav-link" data-toggle="tab">9月</a></li>
+    <li class="nav-item"><a href="#mon-10" class="nav-link" data-toggle="tab">10月</a></li>
+    <li class="nav-item"><a href="#mon-11" class="nav-link" data-toggle="tab">11月</a></li>
+    <li class="nav-item"><a href="#mon-12" class="nav-link" data-toggle="tab">12月</a></li>
+    <li class="nav-item"><a href="#mon-1" class="nav-link" data-toggle="tab">1月</a></li>
+    <li class="nav-item"><a href="#mon-2" class="nav-link" data-toggle="tab">2月</a></li>
+    <li class="nav-item"><a href="#mon-3" class="nav-link" data-toggle="tab">3月</a></li>
+  </ul>
+  <div class="tab-content">
+    <div id="mon-4" class="tab-pane active">
+      <div>
+        <% @schdules.each do |schdule| %>
+          <% if schdule.day.month == 4 %>
+            <li class="mb-3">
+              <%= link_to schdule.day, edit_schdule_path(schdule) %>
+              <%= schdule.content %>
+              @<%= schdule.place %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="mon-5" class="tab-pane">
+      <div>
+        <% @schdules.each do |schdule| %>
+          <% if schdule.day.month == 5 %>
+            <li class="mb-3">
+              <%= link_to schdule.day, edit_schdule_path(schdule) %>
+              <%= schdule.content %>
+              @<%= schdule.place %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="mon-6" class="tab-pane">
+      <div>
+        <% @schdules.each do |schdule| %>
+          <% if schdule.day.month == 6 %>
+            <li class="mb-3">
+              <%= link_to schdule.day, edit_schdule_path(schdule) %>
+              <%= schdule.content %>
+              @<%= schdule.place %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="mon-7" class="tab-pane">
+      <div>
+        <% @schdules.each do |schdule| %>
+          <% if schdule.day.month == 7 %>
+            <li class="mb-3">
+              <%= link_to schdule.day, edit_schdule_path(schdule) %>
+              <%= schdule.content %>
+              @<%= schdule.place %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="mon-8" class="tab-pane">
+      <div>
+        <% @schdules.each do |schdule| %>
+          <% if schdule.day.month == 8 %>
+            <li class="mb-3">
+              <%= link_to schdule.day, edit_schdule_path(schdule) %>
+              <%= schdule.content %>
+              @<%= schdule.place %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="mon-9" class="tab-pane">
+      <div>
+        <% @schdules.each do |schdule| %>
+          <% if schdule.day.month == 9 %>
+            <li class="mb-3">
+              <%= link_to schdule.day, edit_schdule_path(schdule) %>
+              <%= schdule.content %>
+              @<%= schdule.place %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="mon-10" class="tab-pane">
+      <div>
+        <% @schdules.each do |schdule| %>
+          <% if schdule.day.month == 10 %>
+            <li class="mb-3">
+              <%= link_to schdule.day, edit_schdule_path(schdule) %>
+              <%= schdule.content %>
+              @<%= schdule.place %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="mon-11" class="tab-pane">
+       <div>
+        <% @schdules.each do |schdule| %>
+          <% if schdule.day.month == 11 %>
+            <li class="mb-3">
+              <%= link_to schdule.day, edit_schdule_path(schdule) %>
+              <%= schdule.content %>
+              @<%= schdule.place %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="mon-12" class="tab-pane">
+      <div>
+        <% @schdules.each do |schdule| %>
+          <% if schdule.day.month == 12 %>
+            <li class="mb-3">
+              <%= link_to schdule.day, edit_schdule_path(schdule) %>
+              <%= schdule.content %>
+              @<%= schdule.place %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="mon-1" class="tab-pane">
+      <div>
+        <% @schdules.each do |schdule| %>
+          <% if schdule.day.month == 1 %>
+            <li class="mb-3">
+              <%= link_to schdule.day, edit_schdule_path(schdule) %>
+              <%= schdule.content %>
+              @<%= schdule.place %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="mon-2" class="tab-pane">
+      <div>
+        <% @schdules.each do |schdule| %>
+          <% if schdule.day.month == 2 %>
+            <li class="mb-3">
+              <%= link_to schdule.day, edit_schdule_path(schdule) %>
+              <%= schdule.content %>
+              @<%= schdule.place %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="mon-3" class="tab-pane">
+      <div>
+        <% @schdules.each do |schdule| %>
+          <% if schdule.day.month == 3 %>
+            <li class="mb-3">
+              <%= link_to schdule.day, edit_schdule_path(schdule) %>
+              <%= schdule.content %>
+              @<%= schdule.place %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div>
+    <p class="text-right"><%= link_to "予定を追加", new_schdule_path %></p>
   </div>
   <hr>
   <div class="footer-icon text-center">
@@ -42,21 +217,21 @@
   <hr>
   <div>
     <div class="text-center">
-      <h3>About us</h3>
+      <h3 class="m-3">About us</h3>
       <p>DreamScoutsは一般のマーチングバンドのチームです。</p>
     </div>
     <p class="text-right">詳細はこちら</p>
   </div>
   <hr>
   <div>
-    <h3 class="text-center">New Topics</h3>
+    <h3 class="text-center m-3">New Topics</h3>
     <div>
       <div class="container">
         <div class="row">
           <% @articles.each do |article| %>
             <div class="col-xl-4 text-center cover-img">
-              <p><%= link_to image_tag(article.image.thumbpart.url), article_path(article) %></p>
               <h5><%= article.title %></h5>
+              <p><%= link_to image_tag(article.image.thumbpart.url), article_path(article) %></p>
             </div>
           <% end %>  
         </div>
@@ -66,7 +241,179 @@
   </div>
   <hr>
   <div>
-    <h3 class="text-center">スケジュール</h3>
+    <h3 id="schdules" class="text-center m-3">スケジュール</h3>
+  </div>
+  <ul class="nav nav-tabs nav-justified">
+    <li class="nav-item"><a href="#mon-4" class="nav-link active" data-toggle="tab">4月<a/></li>
+    <li class="nav-item"><a href="#mon-5" class="nav-link" data-toggle="tab">5月</a></li>
+    <li class="nav-item"><a href="#mon-6" class="nav-link" data-toggle="tab">6月</a></li>
+    <li class="nav-item"><a href="#mon-7" class="nav-link" data-toggle="tab">7月</a></li>
+    <li class="nav-item"><a href="#mon-8" class="nav-link" data-toggle="tab">8月</a></li>
+    <li class="nav-item"><a href="#mon-9" class="nav-link" data-toggle="tab">9月</a></li>
+    <li class="nav-item"><a href="#mon-10" class="nav-link" data-toggle="tab">10月</a></li>
+    <li class="nav-item"><a href="#mon-11" class="nav-link" data-toggle="tab">11月</a></li>
+    <li class="nav-item"><a href="#mon-12" class="nav-link" data-toggle="tab">12月</a></li>
+    <li class="nav-item"><a href="#mon-1" class="nav-link" data-toggle="tab">1月</a></li>
+    <li class="nav-item"><a href="#mon-2" class="nav-link" data-toggle="tab">2月</a></li>
+    <li class="nav-item"><a href="#mon-3" class="nav-link" data-toggle="tab">3月</a></li>
+  </ul>
+  <div class="tab-content">
+    <div id="mon-4" class="tab-pane active">
+      <div>
+        <% @schdules.each do |schdule| %>
+          <% if schdule.day.month == 4 %>
+            <li class="mb-3">
+              <%= schdule.day %>
+              <%= schdule.content %>
+              @<%= schdule.place %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="mon-5" class="tab-pane">
+      <div>
+        <% @schdules.each do |schdule| %>
+          <% if schdule.day.month == 5 %>
+            <li class="mb-3">
+              <%= schdule.day %>
+              <%= schdule.content %>
+              @<%= schdule.place %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="mon-6" class="tab-pane">
+      <div>
+        <% @schdules.each do |schdule| %>
+          <% if schdule.day.month == 6 %>
+            <li class="mb-3">
+              <%= schdule.day %>
+              <%= schdule.content %>
+              @<%= schdule.place %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="mon-7" class="tab-pane">
+      <div>
+        <% @schdules.each do |schdule| %>
+          <% if schdule.day.month == 7 %>
+            <li class="mb-3">
+              <%= schdule.day %>
+              <%= schdule.content %>
+              @<%= schdule.place %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="mon-8" class="tab-pane">
+      <div>
+        <% @schdules.each do |schdule| %>
+          <% if schdule.day.month == 8 %>
+            <li class="mb-3">
+              <%= schdule.day %>
+              <%= schdule.content %>
+              @<%= schdule.place %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="mon-9" class="tab-pane">
+      <div>
+        <% @schdules.each do |schdule| %>
+          <% if schdule.day.month == 9 %>
+            <li class="mb-3">
+              <%= schdule.day %>
+              <%= schdule.content %>
+              @<%= schdule.place %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="mon-10" class="tab-pane">
+      <div>
+        <% @schdules.each do |schdule| %>
+          <% if schdule.day.month == 10 %>
+            <li class="mb-3">
+              <%= schdule.day %>
+              <%= schdule.content %>
+              @<%= schdule.place %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="mon-11" class="tab-pane">
+       <div>
+        <% @schdules.each do |schdule| %>
+          <% if schdule.day.month == 11 %>
+            <li class="mb-3">
+              <%= schdule.day %>
+              <%= schdule.content %>
+              @<%= schdule.place %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="mon-12" class="tab-pane">
+      <div>
+        <% @schdules.each do |schdule| %>
+          <% if schdule.day.month == 12 %>
+            <li class="mb-3">
+              <%= schdule.day %>
+              <%= schdule.content %>
+              @<%= schdule.place %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="mon-1" class="tab-pane">
+      <div>
+        <% @schdules.each do |schdule| %>
+          <% if schdule.day.month == 1 %>
+            <li class="mb-3">
+              <%= schdule.day %>
+              <%= schdule.content %>
+              @<%= schdule.place %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="mon-2" class="tab-pane">
+      <div>
+        <% @schdules.each do |schdule| %>
+          <% if schdule.day.month == 2 %>
+            <li class="mb-3">
+              <%= schdule.day %>
+              <%= schdule.content %>
+              @<%= schdule.place %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="mon-3" class="tab-pane">
+      <div>
+        <% @schdules.each do |schdule| %>
+          <% if schdule.day.month == 3 %>
+            <li class="mb-3">
+              <%= schdule.day %>
+              <%= schdule.content %>
+              @<%= schdule.place %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
   <hr>
   <div class="container">
@@ -77,7 +424,7 @@
       <a href="#" class="col-md-4 btn btn-light border-white">
         <i class="far fa-envelope fa-2x m-2" style="vertical-align:middle;"></i>見学申請はこちら
       </a>
-      <a href="login" class="col-md-4 btn btn-light border-white">
+      <a href="<%= login_path %>" class="col-md-4 btn btn-light border-white">
         <i class="fas fa-sign-in-alt fa-2x m-2" style="vertical-align:middle;"></i>メンバーログイン
       </a>
     </div>

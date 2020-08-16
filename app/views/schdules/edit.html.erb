@@ -1,0 +1,28 @@
+<div class="text-center">
+  <h1>予定の編集</h1>
+</div>
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+    <%= form_with(model: @schdule, local: true) do |f| %>
+      <div class="form-group">
+        <%= f.label :day, '日付' %>
+        <%= f.date_select :day, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :content, '予定' %>
+        <%= f.text_area :content, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :place, '場所' %>
+        <%= f.text_field :place, class: 'form-control' %>
+      </div>
+      <div class="text-center">
+        <%= f.submit '登録', class: 'btn btn-primary btn-sm m-2' %>
+        <%= link_to "削除", @schdule, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm m-2' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="text-left">
+  <%= link_to '戻る', root_url %>
+</div>
