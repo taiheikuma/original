@@ -6,4 +6,6 @@ class Post < ApplicationRecord
   
   has_many :reads
   has_many :readings, through: :reads, source: :user 
+  has_many :reverses_of_reads, class_name: 'Reads'
+  has_many :read, through: :reverses_of_reads, source: :user
 end

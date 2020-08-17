@@ -2,23 +2,24 @@
   <h1>プロフィール</h1>
 </div>
 
-<ul class="list-unstyled">
+  <ul class="list-unstyled">
     <li class="media">
       <div>
         <%= image_tag current_user.image.thumb.url if current_user.image? %>
       </div>
-      <div class="media-body m-2">
+      <div class="media-body m-3">
         <div>
-          <h6>名前：<%= current_user.name %></h6>
-          <h6>メールアドレス：<%= current_user.email %></h6>
-          <h6>楽器：<%= current_user.part.name %></h6>
-          <h6>生年月日：<%= current_user.birthday %></h6>
-          <h6>経歴：<%= current_user.carrer %></h6>
-          <h6>メッセージ：<%= current_user.message %></h6>
+          <h6>名前<p class="mt-1"><%= current_user.name %></p></h6>
+          <h6>メールアドレス<p class="mt-1"><%= current_user.email %></p></h6>
+          <h6>楽器<p class="mt-1"><%= current_user.part.name %></p></h6>
+          <h6>生年月日<p class="mt-1"><%= current_user.birthday %></p></h6>
+          <h6>経歴<div class="mt-1"><%= simple_format(current_user.carrer) %></div></h6>
+          <h6>メッセージ<div class="mt-1"><%= simple_format(current_user.message) %></div></h6>
         </div>
       </div>
     </li>
-</ul>
+  </ul>
+
 <div class="text-right">
   <%= link_to '個人情報を編集する', edit_user_path(current_user) %>
 </div>

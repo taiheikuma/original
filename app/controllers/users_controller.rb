@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def show
     unless current_user.part.present?
       redirect_to edit_user_path(current_user)
-      flash[:danger] = '楽器を選択してください。'
+      flash[:danger] = '楽器を選択して登録してください。'
     end
   end
 
