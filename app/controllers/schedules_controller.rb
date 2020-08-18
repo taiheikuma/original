@@ -1,4 +1,4 @@
-class SchdulesController < ApplicationController
+class SchedulesController < ApplicationController
    before_action :require_user_logged_in, only: [:new, :create, :edit, :update, :destroy]
   
   def index
@@ -8,14 +8,14 @@ class SchdulesController < ApplicationController
   end
 
   def new
-    @schdule = Schdule.new
+    @schedule = Schedule.new
   end
 
   def create
-    @schdule = current_user.schdules.build(schdule_params)
-    if @schdule.save
+    @schedule = current_user.schedules.build(schedule_params)
+    if @schedule.save
       flash[:success] = '予定を投稿しました。'
-      redirect_to root_url(anchor: 'schdules')
+      redirect_to root_url(anchor: 'schedules')
     else
       flash.now[:danger] = '予定の投稿に失敗しました。'
       render :new
@@ -23,14 +23,14 @@ class SchdulesController < ApplicationController
   end
 
   def edit
-    @schdule = Schdule.find(params[:id])
+    @schedule = Schedule.find(params[:id])
   end
 
   def update
-    @schdule = Schdule.find(params[:id])
-    if @schdule.update(schdule_params)
+    @schedule = Schedule.find(params[:id])
+    if @schedule.update(schedule_params)
       flash[:success] = '更新されました'
-      redirect_to root_url(anchor: 'schdules')
+      redirect_to root_url(anchor: 'schedules')
     else
       flash.now[:danger] = '更新されませんでした'
       render :edit
@@ -38,15 +38,15 @@ class SchdulesController < ApplicationController
   end
 
   def destroy
-    @schdule = Schdule.find(params[:id])
-    @schdule.destroy
+    @schedule = Schedule.find(params[:id])
+    @schedule.destroy
     flash[:success] = '予定を削除しました。'
-    redirect_to root_url(anchor: 'schdules')
+    redirect_to root_url(anchor: 'schedules')
   end
 
   private
 
-  def schdule_params
-    params.require(:schdule).permit(:day, :content, :place)
+  def schedule_params
+    params.require(:schedule).permit(:day, :content, :place)
   end
 end

@@ -24,7 +24,7 @@
   </div>
   <hr>
   <div>
-    <h3 id="schdules" class="text-center m-3">スケジュール</h3>
+    <h3 id="schedules" class="text-center m-3">スケジュール</h3>
   </div>
   <ul class="nav nav-tabs nav-justified">
     <li class="nav-item"><a href="#mon-4" class="nav-link active" data-toggle="tab">4月<a/></li>
@@ -43,12 +43,12 @@
   <div class="tab-content">
     <div id="mon-4" class="tab-pane active">
       <div>
-        <% @schdules.each do |schdule| %>
-          <% if schdule.day.month == 4 %>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day.month == 4 %>
             <li class="mb-3">
-              <%= link_to schdule.day, edit_schdule_path(schdule) %>
-              <%= schdule.content %>
-              @<%= schdule.place %>
+              <%= link_to schedule.day, edit_schedule_path(schedule) %>
+              <%= schedule.content %>
+              @<%= schedule.place %>
             </li>
           <% end %>
         <% end %>
@@ -56,12 +56,12 @@
     </div>
     <div id="mon-5" class="tab-pane">
       <div>
-        <% @schdules.each do |schdule| %>
-          <% if schdule.day.month == 5 %>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day.month == 5 %>
             <li class="mb-3">
-              <%= link_to schdule.day, edit_schdule_path(schdule) %>
-              <%= schdule.content %>
-              @<%= schdule.place %>
+              <%= link_to schedule.day, edit_schedule_path(schedule) %>
+              <%= schedule.content %>
+              @<%= schedule.place %>
             </li>
           <% end %>
         <% end %>
@@ -69,12 +69,12 @@
     </div>
     <div id="mon-6" class="tab-pane">
       <div>
-        <% @schdules.each do |schdule| %>
-          <% if schdule.day.month == 6 %>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day.month == 6 %>
             <li class="mb-3">
-              <%= link_to schdule.day, edit_schdule_path(schdule) %>
-              <%= schdule.content %>
-              @<%= schdule.place %>
+              <%= link_to schedule.day, edit_schedule_path(schedule) %>
+              <%= schedule.content %>
+              @<%= schedule.place %>
             </li>
           <% end %>
         <% end %>
@@ -82,12 +82,12 @@
     </div>
     <div id="mon-7" class="tab-pane">
       <div>
-        <% @schdules.each do |schdule| %>
-          <% if schdule.day.month == 7 %>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day.month == 7 %>
             <li class="mb-3">
-              <%= link_to schdule.day, edit_schdule_path(schdule) %>
-              <%= schdule.content %>
-              @<%= schdule.place %>
+              <%= link_to schedule.day, edit_schedule_path(schedule) %>
+              <%= schedule.content %>
+              @<%= schedule.place %>
             </li>
           <% end %>
         <% end %>
@@ -95,12 +95,12 @@
     </div>
     <div id="mon-8" class="tab-pane">
       <div>
-        <% @schdules.each do |schdule| %>
-          <% if schdule.day.month == 8 %>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day.month == 8 %>
             <li class="mb-3">
-              <%= link_to schdule.day, edit_schdule_path(schdule) %>
-              <%= schdule.content %>
-              @<%= schdule.place %>
+              <%= link_to schedule.day, edit_schedule_path(schedule) %>
+              <%= schedule.content %>
+              @<%= schedule.place %>
             </li>
           <% end %>
         <% end %>
@@ -108,12 +108,12 @@
     </div>
     <div id="mon-9" class="tab-pane">
       <div>
-        <% @schdules.each do |schdule| %>
-          <% if schdule.day.month == 9 %>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day.month == 9 %>
             <li class="mb-3">
-              <%= link_to schdule.day, edit_schdule_path(schdule) %>
-              <%= schdule.content %>
-              @<%= schdule.place %>
+              <%= link_to schedule.day, edit_schedule_path(schedule) %>
+              <%= schedule.content %>
+              @<%= schedule.place %>
             </li>
           <% end %>
         <% end %>
@@ -121,12 +121,12 @@
     </div>
     <div id="mon-10" class="tab-pane">
       <div>
-        <% @schdules.each do |schdule| %>
-          <% if schdule.day.month == 10 %>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day.month == 10 %>
             <li class="mb-3">
-              <%= link_to schdule.day, edit_schdule_path(schdule) %>
-              <%= schdule.content %>
-              @<%= schdule.place %>
+              <%= link_to schedule.day, edit_schedule_path(schedule) %>
+              <%= schedule.content %>
+              @<%= schedule.place %>
             </li>
           <% end %>
         <% end %>
@@ -134,12 +134,12 @@
     </div>
     <div id="mon-11" class="tab-pane">
        <div>
-        <% @schdules.each do |schdule| %>
-          <% if schdule.day.month == 11 %>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day.month == 11 %>
             <li class="mb-3">
-              <%= link_to schdule.day, edit_schdule_path(schdule) %>
-              <%= schdule.content %>
-              @<%= schdule.place %>
+              <%= link_to schedule.day, edit_schedule_path(schedule) %>
+              <%= schedule.content %>
+              @<%= schedule.place %>
             </li>
           <% end %>
         <% end %>
@@ -147,12 +147,12 @@
     </div>
     <div id="mon-12" class="tab-pane">
       <div>
-        <% @schdules.each do |schdule| %>
-          <% if schdule.day.month == 12 %>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day.month == 12 %>
             <li class="mb-3">
-              <%= link_to schdule.day, edit_schdule_path(schdule) %>
-              <%= schdule.content %>
-              @<%= schdule.place %>
+              <%= link_to schedule.day, edit_schedule_path(schedule) %>
+              <%= schedule.content %>
+              @<%= schedule.place %>
             </li>
           <% end %>
         <% end %>
@@ -160,12 +160,12 @@
     </div>
     <div id="mon-1" class="tab-pane">
       <div>
-        <% @schdules.each do |schdule| %>
-          <% if schdule.day.month == 1 %>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day.month == 1 %>
             <li class="mb-3">
-              <%= link_to schdule.day, edit_schdule_path(schdule) %>
-              <%= schdule.content %>
-              @<%= schdule.place %>
+              <%= link_to schedule.day, edit_schedule_path(schedule) %>
+              <%= schedule.content %>
+              @<%= schedule.place %>
             </li>
           <% end %>
         <% end %>
@@ -173,12 +173,12 @@
     </div>
     <div id="mon-2" class="tab-pane">
       <div>
-        <% @schdules.each do |schdule| %>
-          <% if schdule.day.month == 2 %>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day.month == 2 %>
             <li class="mb-3">
-              <%= link_to schdule.day, edit_schdule_path(schdule) %>
-              <%= schdule.content %>
-              @<%= schdule.place %>
+              <%= link_to schedule.day, edit_schedule_path(schedule) %>
+              <%= schedule.content %>
+              @<%= schedule.place %>
             </li>
           <% end %>
         <% end %>
@@ -186,12 +186,12 @@
     </div>
     <div id="mon-3" class="tab-pane">
       <div>
-        <% @schdules.each do |schdule| %>
-          <% if schdule.day.month == 3 %>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day.month == 3 %>
             <li class="mb-3">
-              <%= link_to schdule.day, edit_schdule_path(schdule) %>
-              <%= schdule.content %>
-              @<%= schdule.place %>
+              <%= link_to schedule.day, edit_schedule_path(schedule) %>
+              <%= schedule.content %>
+              @<%= schedule.place %>
             </li>
           <% end %>
         <% end %>
@@ -199,7 +199,7 @@
     </div>
   </div>
   <div>
-    <p class="text-right"><%= link_to "予定を追加", new_schdule_path %></p>
+    <p class="text-right"><%= link_to "予定を追加", new_schedule_path %></p>
   </div>
   <hr>
   <div class="footer-icon text-center">
@@ -245,7 +245,7 @@
   </div>
   <hr>
   <div>
-    <h3 id="schdules" class="text-center m-3">スケジュール</h3>
+    <h3 id="schedules" class="text-center m-3">スケジュール</h3>
   </div>
   <ul class="nav nav-tabs nav-justified">
     <li class="nav-item"><a href="#mon-4" class="nav-link active" data-toggle="tab">4月<a/></li>
@@ -264,12 +264,12 @@
   <div class="tab-content">
     <div id="mon-4" class="tab-pane active">
       <div>
-        <% @schdules.each do |schdule| %>
-          <% if schdule.day.month == 4 %>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day.month == 4 %>
             <li class="mb-3">
-              <%= schdule.day %>
-              <%= schdule.content %>
-              @<%= schdule.place %>
+              <%= link_to schedule.day, edit_schedule_path(schedule) %>
+              <%= schedule.content %>
+              @<%= schedule.place %>
             </li>
           <% end %>
         <% end %>
@@ -277,12 +277,12 @@
     </div>
     <div id="mon-5" class="tab-pane">
       <div>
-        <% @schdules.each do |schdule| %>
-          <% if schdule.day.month == 5 %>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day.month == 5 %>
             <li class="mb-3">
-              <%= schdule.day %>
-              <%= schdule.content %>
-              @<%= schdule.place %>
+              <%= link_to schedule.day, edit_schedule_path(schedule) %>
+              <%= schedule.content %>
+              @<%= schedule.place %>
             </li>
           <% end %>
         <% end %>
@@ -290,12 +290,12 @@
     </div>
     <div id="mon-6" class="tab-pane">
       <div>
-        <% @schdules.each do |schdule| %>
-          <% if schdule.day.month == 6 %>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day.month == 6 %>
             <li class="mb-3">
-              <%= schdule.day %>
-              <%= schdule.content %>
-              @<%= schdule.place %>
+              <%= link_to schedule.day, edit_schedule_path(schedule) %>
+              <%= schedule.content %>
+              @<%= schedule.place %>
             </li>
           <% end %>
         <% end %>
@@ -303,12 +303,12 @@
     </div>
     <div id="mon-7" class="tab-pane">
       <div>
-        <% @schdules.each do |schdule| %>
-          <% if schdule.day.month == 7 %>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day.month == 7 %>
             <li class="mb-3">
-              <%= schdule.day %>
-              <%= schdule.content %>
-              @<%= schdule.place %>
+              <%= link_to schedule.day, edit_schedule_path(schedule) %>
+              <%= schedule.content %>
+              @<%= schedule.place %>
             </li>
           <% end %>
         <% end %>
@@ -316,12 +316,12 @@
     </div>
     <div id="mon-8" class="tab-pane">
       <div>
-        <% @schdules.each do |schdule| %>
-          <% if schdule.day.month == 8 %>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day.month == 8 %>
             <li class="mb-3">
-              <%= schdule.day %>
-              <%= schdule.content %>
-              @<%= schdule.place %>
+              <%= link_to schedule.day, edit_schedule_path(schedule) %>
+              <%= schedule.content %>
+              @<%= schedule.place %>
             </li>
           <% end %>
         <% end %>
@@ -329,12 +329,12 @@
     </div>
     <div id="mon-9" class="tab-pane">
       <div>
-        <% @schdules.each do |schdule| %>
-          <% if schdule.day.month == 9 %>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day.month == 9 %>
             <li class="mb-3">
-              <%= schdule.day %>
-              <%= schdule.content %>
-              @<%= schdule.place %>
+              <%= link_to schedule.day, edit_schedule_path(schedule) %>
+              <%= schedule.content %>
+              @<%= schedule.place %>
             </li>
           <% end %>
         <% end %>
@@ -342,12 +342,12 @@
     </div>
     <div id="mon-10" class="tab-pane">
       <div>
-        <% @schdules.each do |schdule| %>
-          <% if schdule.day.month == 10 %>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day.month == 10 %>
             <li class="mb-3">
-              <%= schdule.day %>
-              <%= schdule.content %>
-              @<%= schdule.place %>
+              <%= link_to schedule.day, edit_schedule_path(schedule) %>
+              <%= schedule.content %>
+              @<%= schedule.place %>
             </li>
           <% end %>
         <% end %>
@@ -355,12 +355,12 @@
     </div>
     <div id="mon-11" class="tab-pane">
        <div>
-        <% @schdules.each do |schdule| %>
-          <% if schdule.day.month == 11 %>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day.month == 11 %>
             <li class="mb-3">
-              <%= schdule.day %>
-              <%= schdule.content %>
-              @<%= schdule.place %>
+              <%= link_to schedule.day, edit_schedule_path(schedule) %>
+              <%= schedule.content %>
+              @<%= schedule.place %>
             </li>
           <% end %>
         <% end %>
@@ -368,12 +368,12 @@
     </div>
     <div id="mon-12" class="tab-pane">
       <div>
-        <% @schdules.each do |schdule| %>
-          <% if schdule.day.month == 12 %>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day.month == 12 %>
             <li class="mb-3">
-              <%= schdule.day %>
-              <%= schdule.content %>
-              @<%= schdule.place %>
+              <%= link_to schedule.day, edit_schedule_path(schedule) %>
+              <%= schedule.content %>
+              @<%= schedule.place %>
             </li>
           <% end %>
         <% end %>
@@ -381,12 +381,12 @@
     </div>
     <div id="mon-1" class="tab-pane">
       <div>
-        <% @schdules.each do |schdule| %>
-          <% if schdule.day.month == 1 %>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day.month == 1 %>
             <li class="mb-3">
-              <%= schdule.day %>
-              <%= schdule.content %>
-              @<%= schdule.place %>
+              <%= link_to schedule.day, edit_schedule_path(schedule) %>
+              <%= schedule.content %>
+              @<%= schedule.place %>
             </li>
           <% end %>
         <% end %>
@@ -394,12 +394,12 @@
     </div>
     <div id="mon-2" class="tab-pane">
       <div>
-        <% @schdules.each do |schdule| %>
-          <% if schdule.day.month == 2 %>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day.month == 2 %>
             <li class="mb-3">
-              <%= schdule.day %>
-              <%= schdule.content %>
-              @<%= schdule.place %>
+              <%= link_to schedule.day, edit_schedule_path(schedule) %>
+              <%= schedule.content %>
+              @<%= schedule.place %>
             </li>
           <% end %>
         <% end %>
@@ -407,12 +407,12 @@
     </div>
     <div id="mon-3" class="tab-pane">
       <div>
-        <% @schdules.each do |schdule| %>
-          <% if schdule.day.month == 3 %>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day.month == 3 %>
             <li class="mb-3">
-              <%= schdule.day %>
-              <%= schdule.content %>
-              @<%= schdule.place %>
+              <%= link_to schedule.day, edit_schedule_path(schedule) %>
+              <%= schedule.content %>
+              @<%= schedule.place %>
             </li>
           <% end %>
         <% end %>

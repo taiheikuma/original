@@ -7,7 +7,7 @@ Rails.application.routes.draw do
  get 'about', to: 'abouts#index'
  resources :users
  resources :articles
- resources :schdules
+ resources :schedules
  resources :parts
  
  resources :posts, only: [:index, :show, :create, :edit, :update, :destroy] do

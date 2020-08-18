@@ -3,7 +3,7 @@
 </div>
 <div class="row">
   <div class="col-sm-6 offset-sm-3">
-    <%= form_with(model: @schdule, local: true) do |f| %>
+    <%= form_with(model: @schedule, local: true) do |f| %>
       <div class="form-group">
         <%= f.label :day, '日付' %>
         <%= f.date_select :day, class: 'form-control' %>
@@ -23,5 +23,5 @@
   </div>
 </div>
 <div>
-  <%= link_to '戻る', root_url(anchor: 'schdules') %>
+  <%= link_to '戻る', root_url(anchor: 'schedules') %>
 </div>

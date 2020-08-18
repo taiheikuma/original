@@ -11,7 +11,7 @@ class User < ApplicationRecord
     
     has_many :posts
     has_many :articles
-    has_many :schdules
+    has_many :schedules
     has_many :reads
     has_many :readings, through: :reads, source: :post
     
