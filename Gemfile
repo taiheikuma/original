@@ -65,3 +65,5 @@ group :production do
 end
 
 gem 'cloudinary' , '1.11.1'
+
+gem 'dotenv-rails'
