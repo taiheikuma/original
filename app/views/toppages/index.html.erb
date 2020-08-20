@@ -42,159 +42,135 @@
   </ul>
   <div class="tab-content">
     <div id="mon-4" class="tab-pane active">
-      <% if @schedules_april.present? %>
-        <% @schedules_april.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
+        <% if schedule.day.month == 4 %>
           <li class="mb-3">
             <%= link_to schedule.day, edit_schedule_path(schedule) %>
             <%= schedule.content %>
             @<%= schedule.place %>
           </li>
         <% end %>
-      <% else %>
-        <p class="m-2">予定はありません</p>
-      <% end %>
+      <% end %>  
     </div>
     <div id="mon-5" class="tab-pane">
-      <% if @schedules_may.present? %>
-        <% @schedules_may.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
+        <% if schedule.day.month == 5 %>
           <li class="mb-3">
             <%= link_to schedule.day, edit_schedule_path(schedule) %>
             <%= schedule.content %>
             @<%= schedule.place %>
           </li>
         <% end %>
-      <% else %>
-        <p class="m-2">予定はありません</p>
       <% end %>
     </div>
     <div id="mon-6" class="tab-pane">
-      <% if @schedules_june.present? %>
-        <% @schedules_june.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
+        <% if schedule.day.month == 6 %>
           <li class="mb-3">
             <%= link_to schedule.day, edit_schedule_path(schedule) %>
             <%= schedule.content %>
             @<%= schedule.place %>
           </li>
         <% end %>
-      <% else %>
-        <p class="m-2">予定はありません</p>
-      <% end %>
+      <% end %>>
     </div>
     <div id="mon-7" class="tab-pane">
-      <% if @schedules_july.present? %>
-        <% @schedules_july.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
+        <% if schedule.day.month == 7 %>
           <li class="mb-3">
             <%= link_to schedule.day, edit_schedule_path(schedule) %>
             <%= schedule.content %>
             @<%= schedule.place %>
           </li>
         <% end %>
-      <% else %>
-        <p class="m-2">予定はありません</p>
       <% end %>
     </div>
     <div id="mon-8" class="tab-pane">
-      <% if @schedules_aug.present? %>
-        <% @schedules_aug.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
+        <% if schedule.day.month == 8 %>
           <li class="mb-3">
             <%= link_to schedule.day, edit_schedule_path(schedule) %>
             <%= schedule.content %>
             @<%= schedule.place %>
           </li>
         <% end %>
-      <% else %>
-        <p class="m-2">予定はありません</p>
       <% end %>
     </div>
     <div id="mon-9" class="tab-pane">
-      <% if @schedules_sep.present? %>
-        <% @schedules_sep.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
+        <% if schedule.day.month == 9 %>
           <li class="mb-3">
             <%= link_to schedule.day, edit_schedule_path(schedule) %>
             <%= schedule.content %>
             @<%= schedule.place %>
           </li>
         <% end %>
-      <% else %>
-        <p class="m-2">予定はありません</p>
       <% end %>
     </div>
     <div id="mon-10" class="tab-pane">
-      <% if @schedules_oct.present? %>
-        <% @schedules_oct.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
+        <% if schedule.day.month == 10 %>
           <li class="mb-3">
             <%= link_to schedule.day, edit_schedule_path(schedule) %>
             <%= schedule.content %>
             @<%= schedule.place %>
           </li>
         <% end %>
-      <% else %>
-        <p class="m-2">予定はありません</p>
       <% end %>
     </div>
     <div id="mon-11" class="tab-pane">
-      <% if @schedules_nov.present? %>
-        <% @schedules_nov.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
+        <% if schedule.day.month == 11 %>
           <li class="mb-3">
             <%= link_to schedule.day, edit_schedule_path(schedule) %>
             <%= schedule.content %>
             @<%= schedule.place %>
           </li>
         <% end %>
-      <% else %>
-        <p class="m-2">予定はありません</p>
       <% end %>
     </div>
     <div id="mon-12" class="tab-pane">
-      <% if @schedules_des.present? %>
-        <% @schedules_des.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
+        <% if schedule.day.month == 12 %>
           <li class="mb-3">
             <%= link_to schedule.day, edit_schedule_path(schedule) %>
             <%= schedule.content %>
             @<%= schedule.place %>
           </li>
         <% end %>
-      <% else %>
-        <p class="m-2">予定はありません</p>
       <% end %>
     </div>
     <div id="mon-1" class="tab-pane">
-      <% if @schedules_jan.present? %>
-        <% @schedules_jan.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
+        <% if schedule.day.month == 1 %>
           <li class="mb-3">
             <%= link_to schedule.day, edit_schedule_path(schedule) %>
             <%= schedule.content %>
             @<%= schedule.place %>
           </li>
         <% end %>
-      <% else %>
-        <p class="m-2">予定はありません</p>
       <% end %>
     </div>
     <div id="mon-2" class="tab-pane">
-      <% if @schedules_feb.present? %>
-        <% @schedules_feb.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
+        <% if schedule.day.month == 2 %>
           <li class="mb-3">
             <%= link_to schedule.day, edit_schedule_path(schedule) %>
             <%= schedule.content %>
             @<%= schedule.place %>
           </li>
         <% end %>
-      <% else %>
-        <p class="m-2">予定はありません</p>
       <% end %>
     </div>
     <div id="mon-3" class="tab-pane">
-      <% if @schedules_march.present? %>
-        <% @schedules_march.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
+        <% if schedule.day.month == 3 %>
           <li class="mb-3">
             <%= link_to schedule.day, edit_schedule_path(schedule) %>
             <%= schedule.content %>
             @<%= schedule.place %>
           </li>
         <% end %>
-      <% else %>
-        <p class="m-2">予定はありません</p>
       <% end %>
     </div>
   </div>
@@ -263,159 +239,135 @@
   </ul>
   <div class="tab-content">
     <div id="mon-4" class="tab-pane active">
-      <% if @schedules_april.present? %>
-        <% @schedules_april.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
+        <% if schedule.day.month == 4 %>
           <li class="mb-3">
             <%= schedule.day %>
             <%= schedule.content %>
             @<%= schedule.place %>
           </li>
         <% end %>
-      <% else %>
-        <p class="m-2">予定はありません</p>
       <% end %>
     </div>
     <div id="mon-5" class="tab-pane">
-      <% if @schedules_may.present? %>
-        <% @schedules_may.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
+        <% if schedule.day.month == 5 %>
           <li class="mb-3">
             <%= schedule.day %>
             <%= schedule.content %>
             @<%= schedule.place %>
           </li>
         <% end %>
-      <% else %>
-        <p class="m-2">予定はありません</p>
       <% end %>
     </div>
     <div id="mon-6" class="tab-pane">
-      <% if @schedules_june.present? %>
-        <% @schedules_june.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
+        <% if schedule.day.month == 6 %>
           <li class="mb-3">
             <%= schedule.day %>
             <%= schedule.content %>
             @<%= schedule.place %>
           </li>
         <% end %>
-      <% else %>
-        <p class="m-2">予定はありません</p>
       <% end %>
     </div>
     <div id="mon-7" class="tab-pane">
-      <% if @schedules_july.present? %>
-        <% @schedules_july.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
+        <% if schedule.day.month == 7 %>
           <li class="mb-3">
             <%= schedule.day %>
             <%= schedule.content %>
             @<%= schedule.place %>
           </li>
         <% end %>
-      <% else %>
-        <p class="m-2">予定はありません</p>
       <% end %>
     </div>
     <div id="mon-8" class="tab-pane">
-      <% if @schedules_aug.present? %>
-        <% @schedules_aug.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
+        <% if schedule.day.month == 8 %>
           <li class="mb-3">
             <%= schedule.day %>
             <%= schedule.content %>
             @<%= schedule.place %>
           </li>
         <% end %>
-      <% else %>
-        <p class="m-2">予定はありません</p>
       <% end %>
     </div>
     <div id="mon-9" class="tab-pane">
-      <% if @schedules_sep.present? %>
-        <% @schedules_sep.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
+        <% if schedule.day.month == 9 %>
           <li class="mb-3">
             <%= schedule.day %>
             <%= schedule.content %>
             @<%= schedule.place %>
           </li>
         <% end %>
-      <% else %>
-        <p class="m-2">予定はありません</p>
       <% end %>
     </div>
     <div id="mon-10" class="tab-pane">
-      <% if @schedules_oct.present? %>
-        <% @schedules_oct.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
+        <% if schedule.day.month == 10 %>
           <li class="mb-3">
             <%= schedule.day %>
             <%= schedule.content %>
             @<%= schedule.place %>
           </li>
         <% end %>
-      <% else %>
-        <p class="m-2">予定はありません</p>
       <% end %>
     </div>
     <div id="mon-11" class="tab-pane">
-      <% if @schedules_nov.present? %>
-        <% @schedules_nov.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
+        <% if schedule.day.month == 11 %>
           <li class="mb-3">
             <%= schedule.day %>
             <%= schedule.content %>
             @<%= schedule.place %>
           </li>
         <% end %>
-      <% else %>
-        <p class="m-2">予定はありません</p>
       <% end %>
     </div>
     <div id="mon-12" class="tab-pane">
-      <% if @schedules_des.present? %>
-        <% @schedules_des.each do |schedule| %>
+     <% @schedules.each do |schedule| %>
+        <% if schedule.day.month == 12 %>
           <li class="mb-3">
             <%= schedule.day %>
             <%= schedule.content %>
             @<%= schedule.place %>
           </li>
         <% end %>
-      <% else %>
-        <p class="m-2">予定はありません</p>
       <% end %>
     </div>
     <div id="mon-1" class="tab-pane">
-      <% if @schedules_jan.present? %>
-        <% @schedules_jan.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
+        <% if schedule.day.month == 1 %>
           <li class="mb-3">
             <%= schedule.day %>
             <%= schedule.content %>
             @<%= schedule.place %>
           </li>
         <% end %>
-      <% else %>
-        <p class="m-2">予定はありません</p>
       <% end %>
     </div>
     <div id="mon-2" class="tab-pane">
-      <% if @schedules_feb.present? %>
-        <% @schedules_feb.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
+        <% if schedule.day.month == 2 %>
           <li class="mb-3">
             <%= schedule.day %>
             <%= schedule.content %>
             @<%= schedule.place %>
           </li>
         <% end %>
-      <% else %>
-        <p class="m-2">予定はありません</p>
       <% end %>
     </div>
     <div id="mon-3" class="tab-pane">
-      <% if @schedules_march.present? %>
-        <% @schedules_march.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
+        <% if schedule.day.month == 3 %>
           <li class="mb-3">
             <%= schedule.day %>
             <%= schedule.content %>
             @<%= schedule.place %>
           </li>
         <% end %>
-      <% else %>
-        <p class="m-2">予定はありません</p>
       <% end %>
     </div>
   </div>
