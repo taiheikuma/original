@@ -1,7 +1,7 @@
 class ToppagesController < ApplicationController
   def index
     @articles = Article.order(id: :desc).first(3)
-    @schedules_april = Schedule.where("month(date) = 4")
+    @schedules_april = Schedule.where("month(day) = 4")
     @schedules_may = Schedule.where("month(day) = 5")
     @schedules_june = Schedule.where("month(day) = 6")
     @schedules_july = Schedule.where("month(day) = 7")
