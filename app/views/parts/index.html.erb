@@ -7,7 +7,7 @@
       <% @parts.each do |part| %>
         <div class="col-xl-4 text-center">
           <h5><%= part.name %></h5>
-          <div class="mb-5"><%= link_to image_tag(part.image.thumbpart.url), part_path(part) %></div>
+          <div class="mb-5"><img src="<%= part.image %>" width="100"></div>
         </div>
       <% end %>  
     </div>

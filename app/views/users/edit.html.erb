@@ -32,7 +32,7 @@
       
       <div class="text-center">
         <% if @user.image? %>
-          <%= image_tag @user.image.thumbpart.url %>
+          <img src="<%= @user.image %>" width="100">
         <% else %>
           <%= image_tag "/assets/default.jpg", :size => '100x100' %>
         <% end %>

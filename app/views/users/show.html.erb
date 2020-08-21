@@ -5,7 +5,7 @@
   <ul class="list-unstyled">
     <li class="media">
       <div>
-        <%= image_tag current_user.image.thumb.url if current_user.image? %>
+        <img src="<%= current_user.image %>" width="100">
       </div>
       <div class="media-body m-3">
         <div>
