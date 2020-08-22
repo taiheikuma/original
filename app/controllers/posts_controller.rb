@@ -15,9 +15,9 @@ class PostsController < ApplicationController
       flash[:success] = '投稿しました。'
       redirect_to posts_path
     else
-      @posts = current_user.posts.order(id: :desc).page(params[:page])
+      @posts = Post.order(id: :desc).page(params[:page])
       flash.now[:danger] = '投稿に失敗しました。'
-      redirect_to posts_path 
+      render :index
     end
   end
 

@@ -12,24 +12,40 @@
           <h5 class="mb-1"><%= post.tittle %></h5>
           <p class="mb-1"><%= simple_format(post.content) %></p>
         </div>
-        <div>
-          <% unless current_user == post.user %>
-            <% if current_user.reading?(post) %>
-              <%= form_with(model: current_user.reads.find_by(post_id: post.id), local: true, method: :delete) do |f| %>
-                <%= hidden_field_tag :post_id, post.id %>
-                <%= f.submit '読みました', class: 'btn btn-primary btn-sm mr-1' %><%= post.reads.count %>
+        
+        <div class="container">
+          <div class="row">
+            <div>
+              <% if current_user.reading?(post) %>
+                <%= form_with(model: current_user.reads.find_by(post_id: post.id), local: true, method: :delete) do |f| %>
+                  <%= hidden_field_tag :post_id, post.id %>
+                  <%= button_tag(class: "btn btn-default") do %>
+                    <i class="fas fa-check-circle"></i><%= post.reads.count %>
+                  <% end %>
+                <% end %>
+              <% else %>
+                <%= form_with(model: current_user.reads.build, local: true) do |f| %>
+                  <%= hidden_field_tag :post_id, post.id %>
+                  <%= button_tag(class: "btn btn-default") do %>
+                    <i class="far fa-check-circle"></i><%= post.reads.count %>
+                  <% end %>
+                <% end %>
               <% end %>
-            <% else %>
-              <%= form_with(model: current_user.reads.build, local: true) do |f| %>
-                <%= hidden_field_tag :post_id, post.id %>
-                <%= f.submit '読んでいません', class: 'btn btn-danger btn-sm mr-1' %><%= post.reads.count %>
+            </div>
+            <div>
+              <% if current_user == post.user %>
+                <%= link_to edit_post_path(post), class: 'btn btn-default' do %>
+                  <i class="far fa-edit"></i>
+                <% end %>
               <% end %>
-            <% end %>
-          <% end %>
-          <% if current_user == post.user %>
-            <%= link_to "編集", edit_post_path(post), class: 'btn btn-danger btn-sm' %>
-            <%= link_to "削除", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
-          <% end %>
+            </div>
+            <div>
+              <% if current_user == post.user %>
+                <%= link_to post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-default' do %>
+                  <i class="far fa-trash-alt"></i>
+                <% end %>
+              <% end %>
+            </div>
         </div>
       </div>
     </li>
