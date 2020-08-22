@@ -14,7 +14,7 @@
           <% @articles.each do |article| %>
             <div class="col-xl-4 text-center cover-img">
               <h5><%= article.title %></h5>
-              <img src="<%= article.image %>" width="100">
+              <a href=<%= article_path(article) %>><img src="<%= article.image %>" width="280"></a>
             </div>
           <% end %>  
         </div>
@@ -211,7 +211,7 @@
           <% @articles.each do |article| %>
             <div class="col-xl-4 text-center cover-img">
               <h5><%= article.title %></h5>
-              <img src="<%= article.image %>" width="100">
+              <a href=<%= article_path(article) %>><img src="<%= article.image %>" width="280"></a>
             </div>
           <% end %>  
         </div>
