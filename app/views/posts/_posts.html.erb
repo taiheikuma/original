@@ -2,7 +2,7 @@
   <% posts.each do |post| %>
     <li class="media mb-3 p-1 border">
       <div class='mr-3'>
-        <%= image_tag post.user.image.thumb.url if post.user.image? %>
+        <img src="<%= post.user.image.to_s %>" width="100">
       </div>
       <div class="media-body">
         <div class="font-weight-bold mb-2">
