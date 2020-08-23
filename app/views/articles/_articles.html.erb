@@ -1,0 +1,23 @@
+<% if logged_in? %>
+    <% @articles.each do |article| %>
+        <div class="col-xl-4 text-center cover-img">
+            <h5><%= article.title %></h5>
+            <% if article.image? %>
+                <a href=<%= article_path(article) %>><img src="<%= article.image %>" width="280"></a>
+            <% else %>
+                <a href=<%= article_path(article) %>><img src="/assets/default.jpg" width='280'></a>
+            <% end %>
+        </div>
+    <% end %>
+<% else %>
+    <% @articles.each do |article| %>
+        <div class="col-xl-4 text-center cover-img">
+            <h5><%= article.title %></h5>
+            <% if article.image? %>
+                <a href=<%= article_path(article) %>><img src="<%= article.image %>" width="280"></a>
+            <% else %>
+                <a href=<%= article_path(article) %>><img src="/assets/default.jpg" width='280'></a>
+            <% end %>
+        </div>
+    <% end %> 
+<% end %>
