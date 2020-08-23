@@ -12,6 +12,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def after_sign_up_path_for(resource)
+    redirect_to user_path(current_user)
+  end
+  
   def create
     @user = User.new(user_params)
 

@@ -1,0 +1,26 @@
+ja:
+  activerecord:
+    models:
+      article: ニュース
+      post: 連絡
+      part: ニュース
+      schedule: スケジュール
+      user: ユーザー
+    attributes:
+      article:
+        title: タイトル
+        content: 記事の内容
+      post:
+        tittle: タイトル
+        content: 内容
+      part:
+        name: パート名
+      schedule:
+        content: 予定
+        place: 場所
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        

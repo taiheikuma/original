@@ -20,7 +20,7 @@ class PartsController < ApplicationController
           flash[:success] = 'パートを登録しました。'
           redirect_to parts_path
         else
-          flash.now[:danger] = 'パートの登録に失敗しました。'
+          flash.now[:danger] = 'パートを登録できません。'
           render :new
         end
     end
@@ -32,10 +32,10 @@ class PartsController < ApplicationController
     def update
         @part = Part.find(params[:id])
         if @part.update(part_params)
-          flash[:success] = '正常に更新されました'
+          flash[:success] = '更新されました。'
           redirect_to parts_path
         else
-          flash.now[:danger] = '更新されませんでした'
+          flash.now[:danger] = '更新されませんでした。'
           render :edit
         end
     end
@@ -43,7 +43,7 @@ class PartsController < ApplicationController
     def destroy
         @part = Part.find(params[:id])
         @part.destroy
-        flash[:success] = '連絡を削除しました。'
+        flash[:success] = '削除しました。'
         redirect_to parts_path
     end
     

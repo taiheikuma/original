@@ -4,7 +4,7 @@ class Post < ApplicationRecord
     
   belongs_to :user
   
-  has_many :reads
+  has_many :reads, dependent: :destroy
   has_many :readings, through: :reads, source: :user 
   has_many :reverses_of_reads, class_name: 'Reads'
   has_many :read, through: :reverses_of_reads, source: :user

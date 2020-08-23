@@ -1,6 +1,9 @@
+<%= form_with(model: @post, local: true) do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %> 
+<% end %>
 <div class="text-center m-5">
-  <h1>連絡板</h1>
-  <p>連絡を確認した人は<i class="far fa-check-circle"></i>を押してください。</p>
+    <h1>連絡板</h1>
+    <p>連絡を確認した人は<i class="far fa-check-circle"></i>を押してください。</p>
 </div>
 <div class="row">
   <div class="col-sm-7">
@@ -11,7 +14,6 @@
       <h4>連絡投稿</h4>
     </div>
     <%= form_with(model: @post, local: true) do |f| %>
-      
       <div class="form-group">
         <%= f.label :tittle, "タイトル" %>
         <%= f.text_area :tittle, class: 'form-control', rows: 1 %>

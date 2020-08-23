@@ -17,7 +17,7 @@ class SchedulesController < ApplicationController
       flash[:success] = '予定を投稿しました。'
       redirect_to root_url(anchor: 'schedules')
     else
-      flash.now[:danger] = '予定の投稿に失敗しました。'
+      flash.now[:danger] = '予定を投稿できません。'
       render :new
     end
   end
@@ -29,10 +29,10 @@ class SchedulesController < ApplicationController
   def update
     @schedule = Schedule.find(params[:id])
     if @schedule.update(schedule_params)
-      flash[:success] = '更新されました'
+      flash[:success] = '更新されました。'
       redirect_to root_url(anchor: 'schedules')
     else
-      flash.now[:danger] = '更新されませんでした'
+      flash.now[:danger] = '更新されませんでした。'
       render :edit
     end
   end
@@ -40,7 +40,7 @@ class SchedulesController < ApplicationController
   def destroy
     @schedule = Schedule.find(params[:id])
     @schedule.destroy
-    flash[:success] = '予定を削除しました。'
+    flash[:success] = '削除しました。'
     redirect_to root_url(anchor: 'schedules')
   end
 

@@ -16,10 +16,10 @@ class ArticlesController < ApplicationController
   def create
     @article = current_user.articles.build(article_params)
     if @article.save
-      flash[:success] = '記事を投稿しました。'
+      flash[:success] = '連絡を投稿しました。'
       redirect_to articles_path
     else
-      flash.now[:danger] = '記事の投稿に失敗しました。'
+      flash.now[:danger] = '連絡を投稿できません。'
       render :new
     end
   end
@@ -31,10 +31,10 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
     if @article.update(article_params)
-      flash[:success] = '正常に更新されました'
+      flash[:success] = '更新されました。'
       redirect_to article_path
     else
-      flash.now[:danger] = '更新されませんでした'
+      flash.now[:danger] = '更新されませんでした。'
       render :edit
     end
   end
@@ -42,7 +42,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-    flash[:success] = '記事を削除しました。'
+    flash[:success] = '削除しました。'
     redirect_to articles_path
   end
   
