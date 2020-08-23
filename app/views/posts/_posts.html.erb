@@ -2,7 +2,11 @@
   <% posts.each do |post| %>
     <li class="media mb-3 p-1 border">
       <div class='mr-3'>
-        <img src="<%= post.user.image.to_s %>" width="80">
+        <% if post.user.image? %>
+          <img src="<%= post.user.image %>" width="80">
+        <% else %>
+          <img src="/assets/default.jpg" width='80'>
+        <% end %>
       </div>
       <div class="media-body">
         <div class="font-weight-bold mb-2">

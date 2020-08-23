@@ -9,7 +9,11 @@
         <h6><%= simple_format(@article.content) %></h6>
       </div>
       <div class="col-md-6">
-        <img src="<%= @article.image %>" width="350">
+        <% if @article.image? %>
+          <img src="<%= @article.image %>" width="350">
+        <% else %>
+          <img src="/assets/default.jpg" width='350'>
+        <% end %>
       </div>
     </div>
   </div>

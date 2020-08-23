@@ -6,9 +6,13 @@
     <div class="row center">
       <% @articles.each do |article| %>
         <div class="col-xl-4 text-center">
-          <h5><%= article.title %></h5>
+          <h5 ><%= article.title %></h5>
           <div class="mb-5">
-            <a href=<%= article_path(article) %>><img src="<%= article.image %>" width="300"></a>
+            <% if article.image? %>
+              <a href=<%= article_path(article) %>><img src="<%= article.image %>" width="300"></a>
+            <% else %>
+              <a href=<%= article_path(article) %>><img src="/assets/default.jpg" width="300"></a>
+            <% end %>
           </div>
         </div>
       <% end %>  

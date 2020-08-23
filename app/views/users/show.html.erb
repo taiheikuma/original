@@ -5,7 +5,11 @@
   <ul class="list-unstyled">
     <li class="media">
       <div>
-        <img src="<%= current_user.image.to_s %>" width="100">
+        <% if @article.image? %>
+          <img src="<%= current_user.image.to_s %>" width="100">
+        <% else %>
+          <img src="/assets/default.jpg" width = '100'>
+        <% end %>
       </div>
       <div class="media-body m-3">
         <div>
