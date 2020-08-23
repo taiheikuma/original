@@ -14,9 +14,9 @@
         <% else %>
           <img src="/assets/default.jpg" width='100'>
         <% end %>
-          <button type="button" class="btn btn-outline-secondary rounded-pill m-2">
-            <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
-          </button>
+        <button type="button" class="btn btn-outline-secondary rounded-pill m-2">
+          <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+        </button>
       </div>
       <div class="text-center">
         <%= f.submit '登録', class: 'btn btn-primary btn-sm m-2' %>
