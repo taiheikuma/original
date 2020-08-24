@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:index, :show]
     
   def show
+    @user = User.find(params[:id])
     unless current_user.part.present?
       redirect_to edit_user_path(current_user)
       flash[:danger] = '楽器を選択して登録してください。'
@@ -20,8 +21,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      flash[:success] = 'ユーザを登録しました。'
-      redirect_to root_url
+      flash[:success] = 'ユーザを登録しました。ログインしましょう。'
+      redirect_to @user
     else
       flash.now[:danger] = 'ユーザの登録に失敗しました。'
       render :new
